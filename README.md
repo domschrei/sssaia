@@ -11,6 +11,6 @@ Prerequisites:
 
 * Linux toolchain
 * Python3, PyPlot, LaTeX installation
-* The script (`plot_curves.py`](https://raw.githubusercontent.com/domschrei/plotscripts/f7842d3e886b09748e95ea853a60469f4a27a691/plot_curves.py) must be in the user's `$PATH`.
+* The script [`plot_curves.py`](https://raw.githubusercontent.com/domschrei/plotscripts/f7842d3e886b09748e95ea853a60469f4a27a691/plot_curves.py) must be in the user's `$PATH`.
 
 Execute `bash plot-all.sh`, or, in one of the subdirectories, `bash plot.sh`.
