@@ -1,0 +1,15 @@
+Currently Loaded Modulefiles:
+ 1) admin/1.0(default)     5) intel/19.0.5(default)      9) gcc/9.3.0           
+ 2) tempdir/1.0(default)   6) intel-mkl/2019            10) intel-mpi/2019-gcc  
+ 3) lrz/1.0(default)       7) lrztools/2.0(default)     11) cmake/3.14.5        
+ 4) spack/21.1.1           8) slurm_setup/1.0(default)  12) gdb/9.1             
+/dss/dsshome1/lrz/sys/spack/release/21.1.1/opt/x86_64/intel-mpi/2019.8.254-gcc-vyzek4m/compilers_and_libraries_2020.2.254/linux/mpi/intel64/bin/mpirun
+#ranks: 1536
+JOB_LAUNCHING
+build/mallob -q -c=4 -ajpc=180 -ljpc=4 -T=3600 -t=4 -log=/hppfs/scratch/04/di82qij/logs/mallob_chaos_1952427 -v=4 -warmup -satsolver=kclkclcl -pls=0 -job-template=instances/job-template-priorities.json -job-desc-template=instances/sat2020 -client-template=instances/client-template.json -sjd=1 -ba=8 -dc=0
+
+Mallob -- a parallel and distributed platform for job scheduling, load balancing, and SAT solving
+Designed by P. Sanders and D. Schreiber 2018-2022
+Developed by D. Schreiber 2019-2022
+
+JOB_FINISHED
