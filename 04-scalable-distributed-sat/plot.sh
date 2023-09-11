@@ -7,6 +7,24 @@ fullwidth=$(echo "5.118 / $pyplotscale"|bc -l)
 halfwidth=$(echo "$fullwidth / 2"|bc -l)
 thirdwidth=$(echo "$fullwidth / 3"|bc -l)
 
+function plot_buffer_limit_parametrization() {
+    plot_curves.py \
+    data/buflim/buffer-limit-scaling_param1 -l='$\alpha=1$' \
+    data/buflim/buffer-limit-scaling_param0.875 -l='$\alpha=7/8$' \
+    data/buflim/buffer-limit-scaling_param0.75 -l='$\alpha=6/8$' \
+    data/buflim/buffer-limit-scaling_param0.625 -l='$\alpha=5/8$' \
+    data/buflim/buffer-limit-scaling_param1000000 -l='$L=1\,000\,000$' \
+    data/buflim/buffer-limit-scaling_param500000 -l='$L=500\,000$' \
+    data/buflim/buffer-limit-scaling_param200000 -l='$L=200\,000$' \
+    data/buflim/buffer-limit-scaling_param100000 -l='$L=100\,000$' \
+    -linewidths=0.8,0.8,0.8,0.8,1.2,1.2,1.2,1.2 \
+    -linestyles=-,--,-.,:,-,--,-.,: -lw=1.5 -markers=^,d,s,v,^,d,s,v -nomarkers \
+    -colors=#ff7f00,#ff7f00,#ff7f00,#ff7f00,#377eb8,#377eb8,#377eb8,#377eb8 \
+    -xy -miny=0 -maxy=1050000 -minx=0 -maxx=2000 \
+    -labelx='$u$ (\# workers)' -labely='$b(u)$, $\tilde{b}(u)$' \
+    -sizex=4.5 -sizey=2.7 -legendright -o=buffer-limit-functions.pdf
+}
+
 function plot_sateval_portfolio_crosschecking() {
     plot_curves.py \
     data/isc22-selection/oldcomp_portfolio-kcl/cdf -l='KCL' \
@@ -119,9 +137,9 @@ function plot_sateval_geomspeedups() {
         | awk 'BEGIN{c=24} {print c,$1; c*=2}' > .geomspeedup-horde$suf
     done
     plot_curves.py \
-    .geomspeedup-mallob-unsat -l='\textsc{Mallob} (UNSAT)' \
-    .geomspeedup-mallob -l='\textsc{Mallob} (all)' \
-    .geomspeedup-mallob-sat -l='\textsc{Mallob} (SAT)' \
+    .geomspeedup-mallob-unsat -l='\textsc{MallobSat} (UNSAT)' \
+    .geomspeedup-mallob -l='\textsc{MallobSat} (all)' \
+    .geomspeedup-mallob-sat -l='\textsc{MallobSat} (SAT)' \
     .geomspeedup-horde-unsat -l='\textsc{HordeSat} (UNSAT)' \
     .geomspeedup-horde -l='\textsc{HordeSat} (all)' \
     .geomspeedup-horde-sat -l='\textsc{HordeSat} (SAT)' \
@@ -134,8 +152,8 @@ function plot_sateval_geomspeedups() {
 function plot_sateval_mallob_v_horde() {
     # Direct comparison Mallob v Horde
     plot_curves.py \
-    data/isc21/mallob_scaling_32x2x24/cdf -l='\textsc{Mallob} KCL' \
-    data/isc21/mallob_scaling-lingelingonly_32x2x24/cdf -l='\textsc{Mallob} L' \
+    data/isc21/mallob_scaling_32x2x24/cdf -l='\textsc{MallobSat} KCL' \
+    data/isc21/mallob_scaling-lingelingonly_32x2x24/cdf -l='\textsc{MallobSat} L' \
     data/isc21/horde_32x12x4/cdf -l='\textsc{HordeSat}' \
     -xy -minx=0 -maxx=300 -miny=0 \
     -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
@@ -234,16 +252,25 @@ function plot_scheduling() {
 
 function plot_isc22_post_comparison() {
     plot_curves.py \
-    data/post-isc22/isc22-64hwthreads-kicaliglu-cdf.txt -l='\textsc{Mallob} KCLG $\alpha$=$1$' \
+    data/post-isc22/isc22-64hwthreads-kicaliglu-cdf.txt -l='\textsc{MallobSat} KCLG $\alpha$=$1$' \
     data/post-isc22/isc22-64hwthreads-parkissat-rs-cdf.txt -l='\textsc{ParkissatRS}' \
-    data/post-isc22/isc22-64hwthreads-ki-cdf.txt -l='\textsc{Mallob} K $\alpha$=$1$' \
-    data/post-isc22/isc22-64hwthreads-li-cdf.txt -l='\textsc{Mallob} L $\alpha$=$0.9$' \
+    data/post-isc22/isc22-64hwthreads-ki-cdf.txt -l='\textsc{MallobSat} K $\alpha$=$1$' \
+    data/post-isc22/isc22-64hwthreads-li-cdf.txt -l='\textsc{MallobSat} L $\alpha$=$0.9$' \
     -xy -minx=0 -maxx=1000 -miny=0 -maxy=300 \
     -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -linestyles=:,-,--,-. -lw=1.3 \
     -sizex=$halfwidth -sizey=2.6 -o=isc22-rerun.pdf
 }
 
+function plot_weak_scaling_overview() {
+    plot_curves.py data/isc21/mallob_weakscaling/mallob-speedups-min-tseq-{3072,1536,768,384,192,96,48,24} -l={3072,1536,768,384,192,96,48,24} -xy -minx=0 -miny=0 -maxy=800 -nomarkers -labelx='Sequential running time threshold $x$ [s]' -labely='Speedup on instances with $T_{seq}\geq x$' -sizex=$(echo "0.8*$fullwidth"|bc -l) -sizey=3 -legend-right -ticksy=0,100,200,300,400,500,600,700,800 -gridy -lw=1.2 -o=weak-scaling-overview.pdf
+}
+
+function plot_1v1_paracooba() {
+    plot_1v1.py data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' -T=1000 -max=1500 -logscale -markersize=4 -domainmarkers=+,. -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
+}
+
+plot_buffer_limit_parametrization
 plot_sateval_portfolio_crosschecking
 plot_sateval_diversification
 plot_sateval_clause_buffers
@@ -258,3 +285,5 @@ plot_sateval_buflim_scaling
 plot_disturbances
 plot_scheduling
 plot_isc22_post_comparison
+plot_weak_scaling_overview
+plot_1v1_paracooba

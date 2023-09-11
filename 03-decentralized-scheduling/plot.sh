@@ -11,9 +11,8 @@ plot_curves.py \
 data/priorities/avg_volumes_per_prio -y2data=data/priorities/avg_response_times \
 -xy -y2 -miny=0 -miny2=0 -nolegend -sizex=$(echo 0.55*$fullwidth|bc -l) -sizey=2.4 \
 -labelx='Priority' -labely2='Mean response time [s]' -labely='Mean assigned volume $v_j$' \
--minx=-0.01 -maxx=1.01 -ticksx=0,0.25,0.5,0.75,1 -o=prio-volumes.pdf
-
-exit
+-minx=-0.02 -maxx=1.03 -ticksx=0,0.25,0.5,0.75,1 -o=prio-volumes.pdf \
+-topsymbols='-0.275;0;^;#377eb8,1.268;0;s;#ff7f00' -colors='#377eb8,#ff7f00'
 
 plot_curves.py \
 data/mallob_realistic_interarrival2.5/active-jobs -l='$1/\lambda=10\,$s' \
@@ -40,11 +39,11 @@ plot_curves.py data/huca{0,10,100,infty}/histogram-treegrowth-normalized -xy \
 -labelx='Tree growth latency [s]' -labely='Density' -o=chaos-latency-treegrowth.pdf
 
 for nworkers in 96 384 1536; do
-    plot_curves.py \
+    plot_curves.py -title=$nworkers' processes' \
     data/latency-prefixsum/treegrowth-latencies_${nworkers}workers_prefixsum_cdf -l="P" \
     data/latency-prefixsum/treegrowth-latencies_${nworkers}workers_tree_cdf -l="T" \
     data/latency-prefixsum/treegrowth-latencies_${nworkers}workers_randomwalk_cdf -l="W" \
-    -xy -minx=0 -maxx=0.045 -miny=0 -maxy=1 -nomarkers -linestyles=-,--,-. -lw=1.2 -sizex=1.895555 -sizey=2.1 \
+    -xy -minx=0 -maxx=0.045 -miny=0 -maxy=1 -nomarkers -linestyles=-,--,-. -lw=1.2 -sizex=1.895555 -sizey=2.2 \
     -labelx='Latency $t$ [s]' -labely='Pr[\,worker found in $\leq t$\,s\,]' -lloc=4 \
     -o=prefixsum-latencies_${nworkers}workers.pdf -ticksx=0.00,0.02,0.04 -ticksy=0.0,0.2,0.4,0.6,0.8,1.0
 done
