@@ -1,0 +1,1 @@
+-satsolver=kcl -cbbs=3000 -cblm=1 -cblp=66667 -s=0.33333

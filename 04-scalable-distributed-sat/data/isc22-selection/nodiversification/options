@@ -1,0 +1,1 @@
+-satsolver=kcl -isp=0 -div-phases=0 -div-noise=0 -div-seeds=0

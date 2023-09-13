@@ -64,8 +64,8 @@ function plot_sateval_clause_buffers() {
 
 function plot_sateval_filter() {
     plot_curves.py \
-    data/isc22-selection/reshareperiod30/cdf -l='Distr. $z=30\,s$' \
-    data/isc22-selection/reshareperiod4/cdf -l='Distr. $z=4\,s$' \
+    data/isc22-selection/reshareperiod30/cdf -l='Distr. $z=15\,s$' \
+    data/isc22-selection/reshareperiod4/cdf -l='Distr. $z=2\,s$' \
     data/isc22-selection/bloomfiltering/cdf -l='Bloom' \
     data/isc22-selection/nofiltering/cdf -l='{None}' \
     -linestyles=-,--,-.,: -colors='blue,darkblue,orange,red' \
@@ -270,11 +270,12 @@ function plot_1v1_paracooba() {
     plot_1v1.py data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' -T=1000 -max=1500 -logscale -markersize=4 -domainmarkers=+,. -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
 }
 
-plot_buffer_limit_parametrization
-plot_sateval_portfolio_crosschecking
-plot_sateval_diversification
-plot_sateval_clause_buffers
+#plot_buffer_limit_parametrization
+#plot_sateval_portfolio_crosschecking
+#plot_sateval_diversification
+#plot_sateval_clause_buffers
 plot_sateval_filter
+exit 0
 plot_sateval_buflim_growth_params
 plot_sateval_scaling
 plot_sateval_speedupscatter
