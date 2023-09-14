@@ -17,7 +17,7 @@ function plot_buffer_limit_parametrization() {
     data/buflim/buffer-limit-scaling_param500000 -l='$L=500\,000$' \
     data/buflim/buffer-limit-scaling_param200000 -l='$L=200\,000$' \
     data/buflim/buffer-limit-scaling_param100000 -l='$L=100\,000$' \
-    -linewidths=0.8,0.8,0.8,0.8,1.2,1.2,1.2,1.2 \
+    -linewidths=0.8,0.8,0.8,0.8,1.2,1.2,1.2,1.2 -gridx -gridy \
     -linestyles=-,--,-.,:,-,--,-.,: -lw=1.5 -markers=^,d,s,v,^,d,s,v -nomarkers \
     -colors=#ff7f00,#ff7f00,#ff7f00,#ff7f00,#377eb8,#377eb8,#377eb8,#377eb8 \
     -xy -miny=0 -maxy=1050000 -minx=0 -maxx=2000 \
@@ -37,7 +37,7 @@ function plot_sateval_portfolio_crosschecking() {
     -xy -extend-to-right -minx=0 -maxx=300 -miny=0 -maxy=330 \
     -linestyles=--,:,--,-,-,-,: -lw=1 -nomarkers -markers=^,d,+,s,v,x,1 -markersize=4 \
     -colors='#377eb8,#ff7f00,#e41a1c,#ff7f00,#f781bf,#a65628,#999999,#dede00,#377eb8' \
-    -lloc=4 -sizex=$halfwidth -sizey=3 \
+    -lloc=4 -sizex=$halfwidth -sizey=3 -ticksx=0,60,120,180,240,300 -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-portfolio-crosschecking.pdf
 }
@@ -69,25 +69,26 @@ function plot_sateval_filter() {
     data/isc22-selection/bloomfiltering/cdf -l='Bloom' \
     data/isc22-selection/nofiltering/cdf -l='{None}' \
     -linestyles=-,--,-.,: -colors='blue,darkblue,orange,red' \
-    -lw=1.2 -no-markers -markers=v,^,x -markersize=4 \
-    -xy -extend-to-right -minx=0 -maxx=300 -miny=200 -maxy=330 -sizex=$halfwidth -sizey=2.6 \
+    -lw=1.2 -no-markers -markers=v,^,x -markersize=4 -ticksx=0,60,120,180,240,300 -gridx -gridy \
+    -xy -extend-to-right -minx=0 -maxx=300 -miny=195 -maxy=330 -sizex=$halfwidth -sizey=2.6 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-clause-filtering.pdf
 }
 
 function plot_sateval_buflim_growth_params() {
     plot_curves.py \
-    data/isc22-selection/L250k_32nodes/cdf -l='$m=32$, $L=250$k' \
-    data/isc22-selection/alpha0.903121_32nodes/cdf -l='$m=32$, $\alpha\approx{}0.9$' \
-    data/isc22-selection/L250k_16nodes/cdf -l='$m=16$, $L=250$k' \
-    data/isc22-selection/alpha0.903121_16nodes/cdf -l='$m=16$, $\alpha\approx{}0.9$' \
-    data/isc22-selection/L250k_8nodes/cdf -l='$m=8$, $L=250$k' \
-    data/isc22-selection/alpha0.903121_8nodes/cdf -l='$m=8$, $\alpha\approx{}0.9$' \
-    data/isc22-selection/L250k_4nodes/cdf -l='$m=4$, $L=250$k' \
-    data/isc22-selection/alpha0.903121_4nodes/cdf -l='$m=4$, $\alpha\approx{}0.9$' \
+    data/isc22-selection/L250k_32nodes/cdf -l='$m{=}32$ $L{=}250$k' \
+    data/isc22-selection/alpha0.903121_32nodes/cdf -l='$m{=}32$ $\alpha{\approx}0.9$' \
+    data/isc22-selection/L250k_16nodes/cdf -l='$m{=}16$ $L{=}250$k' \
+    data/isc22-selection/alpha0.903121_16nodes/cdf -l='$m{=}16$ $\alpha{\approx}0.9$' \
+    data/isc22-selection/L250k_8nodes/cdf -l='$m{=}8$ $L{=}250$k' \
+    data/isc22-selection/alpha0.903121_8nodes/cdf -l='$m{=}8$ $\alpha{\approx}0.9$' \
+    data/isc22-selection/L250k_4nodes/cdf -l='$m{=}4$ $L{=}250$k' \
+    data/isc22-selection/alpha0.903121_4nodes/cdf -l='$m{=}4$ $\alpha{\approx}0.9$' \
     -linestyles=-,--,-,--,-,--,-,-- -colors=blue,blue,gray,gray,orange,orange,red,red -no-markers -markersize=3 \
-    -xy -extend-to-right -minx=0 -maxx=299.5 -miny=200 -maxy=335 -lloc=4 \
-    -sizex=$(echo "0.5 * $fullwidth"|bc -l) -sizey=3.2 -legend-spacing=0.25 \
+    -xy -extend-to-right -minx=0 -maxx=299.5 -miny=195 -maxy=335 -lloc=4 \
+    -ticksx=0,60,120,180,240,300 -gridx -gridy -nolegendborder \
+    -sizex=$(echo "0.5 * $fullwidth"|bc -l) -sizey=3.2 -legend-spacing=0.2 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-buffer-scaling.pdf
 }
@@ -103,7 +104,8 @@ function plot_sateval_scaling() {
     data/isc21/mallob_scaling_1x2x24/cdf -l='$1\times 2\times 24$' \
     data/isc21/mallob_scaling_1x1x24/cdf -l='$1\times 1\times 24$' \
     data/isc21/kissatmabhywalk/cdf -l='seq.' \
-    -linestyles=-,--,-.,: -lw=1.4 -nomarkers -legend-spacing=0.25 \
+    -linestyles=-,--,-.,: -lw=1.2 -nomarkers -legend-spacing=0.2 \
+    -ticksx=0,60,120,180,240,300 -gridx -gridy \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=0 -maxy=340 -sizex=$halfwidth -sizey=3.1 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-scaling-cdf.pdf
@@ -155,17 +157,17 @@ function plot_sateval_mallob_v_horde() {
     data/isc21/mallob_scaling_32x2x24/cdf -l='\textsc{MallobSat} KCL' \
     data/isc21/mallob_scaling-lingelingonly_32x2x24/cdf -l='\textsc{MallobSat} L' \
     data/isc21/horde_32x12x4/cdf -l='\textsc{HordeSat}' \
-    -xy -minx=0 -maxx=300 -miny=0 \
+    -xy -minx=0 -maxx=300 -miny=0 -gridx -gridy -ticksx=0,60,120,180,240,300 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=:,-,- -lw=1.3 \
-    -sizex=$halfwidth -sizey=2.6 -o=cdf-mallob-vs-horde-final.pdf
+    -sizex=$halfwidth -sizey=2.4 -o=cdf-mallob-vs-horde-final.pdf
 }
 
 function plot_sateval_sharing_v_nosharing() {
     plot_curves.py \
     data/isc21/mallob_scaling_64x2x24/cdf -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf -l='No sharing' \
-    -xy -minx=0 -maxx=300 -miny=0 -nolegend \
+    -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='Overall' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -ticksy=0,100,200,300 \
@@ -173,7 +175,7 @@ function plot_sateval_sharing_v_nosharing() {
     plot_curves.py \
     data/isc21/mallob_scaling_64x2x24/cdf-sat -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf-sat -l='No sharing' \
-    -xy -minx=0 -maxx=300 -miny=0 -nolegend \
+    -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='SAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=165 -ticksy=0,50,100,150 \
@@ -181,7 +183,7 @@ function plot_sateval_sharing_v_nosharing() {
     plot_curves.py \
     data/isc21/mallob_scaling_64x2x24/cdf-unsat -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf-unsat -l='No sharing' \
-    -xy -minx=0 -maxx=300 -miny=0 -nolegend \
+    -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='UNSAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=185 -ticksy=0,50,100,150 \
@@ -191,30 +193,30 @@ function plot_sateval_sharing_v_nosharing() {
 function plot_sateval_buflim_scaling() {
     
     cat data/isc21/mallob_scaling_{1x1,{1,2,4,8,16,32,64}x2}x24/mean-clause-length | awk 'BEGIN{c=1} {print c,$1; c*=2}' > .meanclslen
-    plot_curves.py .meanclslen \
+    plot_curves.py .meanclslen -gridy \
     -xy -nolegend -logx -labelx='\# workers' -labely='Clause length' \
     -ticksx=1,2,4,8,16,32,64,128 -minx=0.85 -maxx=150 -sizex=$halfwidth -sizey=1.6 \
-    -miny=3 -maxy=7 -ticksy=3,4,5,6,7 -linestyles=: \
+    -miny=2.75 -maxy=7 -ticksy=3,4,5,6,7 -linestyles=: \
     -o=sateval-buflim-scaling-clslen.pdf
     
     cat data/isc21/mallob_scaling_{1x1,{1,2,4,8,16,32,64}x2}x24/median-admitted-literals | awk 'BEGIN{c=1} {print c,0.001*$1; c*=2}' > .medianadmittedlits
-    plot_curves.py .medianadmittedlits \
+    plot_curves.py .medianadmittedlits -gridy \
     -xy -nolegend -logx -miny=0 -labelx='\# workers' -labely='k\,Lits shared' \
-    -ticksx=1,2,4,8,16,32,64,128 -minx=0.85 -maxx=150 -sizex=$halfwidth -sizey=1.6 -linestyles=: \
+    -ticksx=1,2,4,8,16,32,64,128 -ticksy=0,50,100,150,200 -minx=0.85 -maxx=150 -sizex=$halfwidth -sizey=1.6 -linestyles=: \
     -o=sateval-buflim-scaling-litsshared.pdf
     
     cat .medianadmittedlits | awk '{print $1,1000*$2/(24*$1)}' > .medianadmittedlitspersolver
-    plot_curves.py .medianadmittedlitspersolver \
+    plot_curves.py .medianadmittedlitspersolver -gridy \
     -xy -nolegend -logx -miny=0 -labelx='\# workers' -labely='Lits per solver' \
     -ticksx=1,2,4,8,16,32,64,128 -minx=0.85 -maxx=150 -sizex=$halfwidth -sizey=1.6 \
     -ticksy=0,50,100,150,200 -maxy=200 -linestyles=: \
     -o=sateval-buflim-scaling-litssharedpersolver.pdf
     
     cat data/isc21/mallob_scaling_{1x1,{1,2,4,8,16,32,64}x2}x24/mean-admitted-clause-ratio | awk 'BEGIN{c=1} {print c,$1; c*=2}' > .meanadmittedclauseratio
-    plot_curves.py .meanadmittedclauseratio \
+    plot_curves.py .meanadmittedclauseratio -gridy \
     -xy -nolegend -logx -labelx='\# workers' -labely='Admitted ratio' \
     -ticksx=1,2,4,8,16,32,64,128 -minx=0.85 -maxx=150 -sizex=$halfwidth -sizey=1.6 \
-    -miny=0.7 -maxy=1.02 -ticksy=0.7,0.8,0.9,1.0 -linestyles=: \
+    -miny=0.68 -maxy=1.02 -ticksy=0.7,0.8,0.9,1.0 -linestyles=: \
     -o=sateval-buflim-scaling-admissionratio.pdf
 }
 
@@ -227,6 +229,7 @@ function plot_disturbances() {
     data/malleable/disturbance/mallob_undisturbed_384/cdf -l='384' \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=250 -maxy=335 -nomarkers \
     -linestyles=-,-.,-,-.,- -sizex=$halfwidth -sizey=2.7 \
+    -ticksx=0,60,120,180,240,300 -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-disturbances-cdf.pdf
 }
@@ -242,7 +245,7 @@ function plot_scheduling() {
     data/malleable/disturbance/mallob_undisturbed_1536/accumulated-cdf -l='OOS 1536 c.' \
     data/malleable/disturbance/mallob_undisturbed_384/accumulated-cdf -l='OOS 384 c.' \
     -extend-to-right -lloc=4 -legend-spacing=0.25 -minx=0 -maxx=7200 -miny=0 -maxy=355 -xy \
-    -nomarkers -linestyles=-,--,-,--,-,--,:,: \
+    -nomarkers -linestyles=-,--,-,--,-,--,:,: -gridx -gridy \
     -sizex=$halfwidth -sizey=3 -labelx='Total running time [s]' -labely='\# finished jobs' \
     -ticksx=0,1800,3600,5400,7200 -colors=orange,orange,red,red,blue,blue,#555555,#bbbbbb \
     -o=sateval-scheduling-cdf.pdf
@@ -254,21 +257,32 @@ function plot_isc22_post_comparison() {
     data/post-isc22/isc22-64hwthreads-parkissat-rs-cdf.txt -l='\textsc{ParkissatRS}' \
     data/post-isc22/isc22-64hwthreads-ki-cdf.txt -l='\textsc{MallobSat} K $\alpha$=$1$' \
     data/post-isc22/isc22-64hwthreads-li-cdf.txt -l='\textsc{MallobSat} L $\alpha$=$0.9$' \
-    -xy -minx=0 -maxx=999 -miny=0 -maxy=300 \
+    -xy -minx=0 -maxx=999 -miny=0 -maxy=300 -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -linestyles=:,-,--,-. -lw=1.3 \
-    -sizex=$(echo "0.6*$fullwidth"|bc -l) -sizey=2.6 -o=isc22-rerun.pdf
+    -sizex=$(echo "0.55*$fullwidth"|bc -l) -sizey=2.6 -o=isc22-rerun.pdf
 }
 
 function plot_weak_scaling_overview() {
-    plot_curves.py data/isc21/mallob_weakscaling/mallob-speedups-min-tseq-{3072,1536,768,384,192,96,48,24} -l={3072,1536,768,384,192,96,48,24} -xy -minx=0 -miny=0 -maxy=800 -nomarkers -labelx='Sequential running time threshold $x$ [s]' -labely='Speedup on instances with $T_{seq}\geq x$' -sizex=$(echo "0.8*$fullwidth"|bc -l) -sizey=3 -legend-right -ticksy=0,100,200,300,400,500,600,700,800 -gridy -lw=1.2 -o=weak-scaling-overview.pdf
+    plot_curves.py data/isc21/mallob_weakscaling/mallob-speedups-min-tseq-{3072,1536,768,384,192,96,48,24} -l={3072,1536,768,384,192,96,48,24} \
+    -xy -minx=0 -miny=0 -maxy=800 -nomarkers \
+    -labelx='Sequential running time threshold $x$ [s]' \
+    -labely='Speedup on instances with $T_{seq}\geq x$' \
+    -sizex=$(echo "0.8*$fullwidth"|bc -l) -sizey=3 -legend-right \
+    -ticksx=0,1800,3600,5400,7200 -gridx \
+    -ticksy=0,100,200,300,400,500,600,700,800 -gridy -lw=1.2 -o=weak-scaling-overview.pdf
 }
 
 function plot_1v1_paracooba() {
-    plot_1v1.py data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' -T=1000 -max=1500 -logscale -markersize=4 -domainmarkers=+,. -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
+    plot_1v1.py \
+    data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' \
+    data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' \
+    -T=1000 -max=1500 -logscale -markersize=3.4 -domainmarkers=+,. -domaincolors='#377eb8,#ff9900' \
+    -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
 }
 
 plot_buffer_limit_parametrization
+exit 0
 plot_sateval_portfolio_crosschecking
 plot_sateval_diversification
 plot_sateval_clause_buffers

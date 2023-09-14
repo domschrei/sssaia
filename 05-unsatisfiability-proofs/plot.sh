@@ -16,8 +16,8 @@ data/cdf-mallobp64-seq -l='\textsc{MallobSatP64} (Seq.)' \
 data/cdf-mallobp64-par -l='\textsc{MallobSatP64} (Par.)' \
 data/cdf-gimsatul -l='\textsc{Gimsatul}' \
 data/cdf-kissatmabhywalk -l='\textsc{KissatMABHyWalk}' \
--xy -nomarkers -minx=0 -maxx=1000 -miny=0 -extend-to-right -lw=1.2 \
--linestyles=:,-.,-,:,-.,-,--,:,: -colors='#e41a1c,#e41a1c,#e41a1c,#377eb8,#377eb8,#377eb8,#377eb8,#377eb8,#ff7f00' -linewidths=1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.7,1.2 \
+-xy -nomarkers -minx=0 -maxx=1000 -miny=0 -maxy=350 -extend-to-right -lw=1.2 \
+-linestyles=:,-.,-,:,-.,-,--,:,: -colors='#e41a1c,#e41a1c,#e41a1c,#377eb8,#377eb8,#377eb8,#377eb8,#377eb8,#ff7f00' -linewidths=1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.7,1.2 -gridx -gridy \
 -sizex=$fullwidth -sizey=3 -labelx='Running time $t$ [s]' \
 -labely='\# instances solved in $\leq t$ s' -legend-right \
 -o=proof-production-cdf.pdf

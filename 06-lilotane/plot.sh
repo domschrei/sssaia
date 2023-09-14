@@ -13,9 +13,10 @@ function plot_sat_planners_cdf() {
     data/cdf-LilotaneQ -l='\textsc{LilotaneQ}' \
     data/cdf-Tree-REX -l='\textsc{Tree-REX}' \
     data/cdf-PANDA-totSAT -l='\textsc{PANDA-totSAT}' \
-    data/cdf-PANDA-SAT -l='\textsc{PANDA-SAT}' \
+    `#data/cdf-PANDA-SAT -l='\textsc{PANDA-SAT}'` \
     data/cdf-PANDA-SAT-OPT -l='\textsc{PANDA-SAT-OPT}' \
-    -xy -nomarkers -lw=1.3 -sizex=$(echo 0.75*$fullwidth|bc -l) -sizey=2.3 -miny=0 -minx=0 -maxx=300 -extend-to-right \
+    -logx -potticksx -minx=0.01 -gridx -gridy \
+    -xy -nomarkers -lw=1.3 -sizex=$(echo 0.85*$fullwidth|bc -l) -sizey=2.5 -miny=0 -maxx=300 -extend-to-right \
     -colors='#377eb8,#377eb8,#e41a1c,#ff7f00,#ff7f00,#ff7f00' -linestyles=-,--,:,-,--,-. \
     -legend-right -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
     -ticksy=0,50,100,150,200,250 -o=PvTvL_runtimes.pdf
@@ -24,14 +25,16 @@ function plot_sat_planners_cdf() {
 function plot_ipc_followup_cdfs() {
     plot_curves.py \
     data/cdf-ipc_run_{002,000,001,003,004}* -l='\textsc{Lilotane}' -l='\textsc{HyperTensioN}' -l='\textsc{Prelilotane}' -l='\textsc{LilotaneQ}' -l='\textsc{LilotaneQ+}' \
-    -xy -nomarkers -lw=1.3 -sizex=$halfwidth -sizey=2.5 -miny=0 -minx=0 -maxx=1800 -extend-to-right \
+    -logx -gridx -gridy -potticksx -nolegend -ticksy=0,100,200,300,400,500 -maxy=575 \
+    -xy -nomarkers -lw=1.3 -sizex=$(echo "0.35*$fullwidth"|bc -l) -sizey=2.25 -miny=0 -minx=0.1 -maxx=1800 -extend-to-right \
     -colors='#377eb8,#e41a1c,#377eb8,#ff7f00,#ff7f00' -linestyles=-,-.,:,--,-. \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
     -o=ipc_runtimes.pdf
     
     plot_curves.py \
     data/cdf-pl-ipc_run_{002,000,001,003,004}* -l='\textsc{Lilotane}' -l='\textsc{HyperTensioN}' -l='\textsc{Prelilotane}' -l='\textsc{LilotaneQ}' -l='\textsc{LilotaneQ+}' \
-    -xy -nomarkers -lw=1.3 -sizex=$halfwidth -sizey=2.5 -miny=0 -minx=0 -maxx=8000 -extend-to-right \
+    -logx -gridx -gridy -potticksx -legend-right -ticksy=0,100,200,300,400,500 -maxy=575 \
+    -xy -nomarkers -lw=1.3 -sizex=$(echo "0.65*$fullwidth"|bc -l) -sizey=2.25 -miny=0 -minx=10 -maxx=10000 -extend-to-right \
     -colors='#377eb8,#e41a1c,#377eb8,#ff7f00,#ff7f00' -linestyles=-,-.,:,--,-. \
     -labelx='Plan length $x$' -labely='\# instances with $|\pi|\leq x$' \
     -o=ipc_planlengths.pdf
@@ -71,6 +74,6 @@ function plot_lilotane_1v1s() {
     -o=LvP_clauses.pdf
 }
 
-plot_sat_planners_cdf
+#plot_sat_planners_cdf
 plot_ipc_followup_cdfs
-plot_lilotane_1v1s
+#plot_lilotane_1v1s

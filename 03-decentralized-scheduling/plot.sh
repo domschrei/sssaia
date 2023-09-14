@@ -44,6 +44,6 @@ for nworkers in 96 384 1536; do
     data/latency-prefixsum/treegrowth-latencies_${nworkers}workers_tree_cdf -l="T" \
     data/latency-prefixsum/treegrowth-latencies_${nworkers}workers_randomwalk_cdf -l="W" \
     -xy -minx=0 -maxx=0.045 -miny=0 -maxy=1 -nomarkers -linestyles=-,--,-. -lw=1.2 -sizex=1.895555 -sizey=2.2 \
-    -labelx='Latency $t$ [s]' -labely='Pr[\,worker found in $\leq t$\,s\,]' -lloc=4 \
+    -labelx='Latency $t$ [s]' -labely='Pr[\,worker found in $\leq t$\,s\,]' -lloc=4 -gridx -gridy \
     -o=prefixsum-latencies_${nworkers}workers.pdf -ticksx=0.00,0.02,0.04 -ticksy=0.0,0.2,0.4,0.6,0.8,1.0
 done
