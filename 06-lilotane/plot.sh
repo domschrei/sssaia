@@ -17,7 +17,7 @@ function plot_sat_planners_cdf() {
     data/cdf-PANDA-SAT-OPT -l='\textsc{PANDA-SAT-OPT}' \
     -xy -nomarkers -lw=1.3 -sizex=$(echo 0.75*$fullwidth|bc -l) -sizey=2.3 -miny=0 -minx=0 -maxx=300 -extend-to-right \
     -colors='#377eb8,#377eb8,#e41a1c,#ff7f00,#ff7f00,#ff7f00' -linestyles=-,--,:,-,--,-. \
-    -legend-right -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
+    -legend-right -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
     -ticksy=0,50,100,150,200,250 -o=PvTvL_runtimes.pdf
 }
 
@@ -26,7 +26,7 @@ function plot_ipc_followup_cdfs() {
     data/cdf-ipc_run_{002,000,001,003,004}* -l='\textsc{Lilotane}' -l='\textsc{HyperTensioN}' -l='\textsc{Prelilotane}' -l='\textsc{LilotaneQ}' -l='\textsc{LilotaneQ+}' \
     -xy -nomarkers -lw=1.3 -sizex=$halfwidth -sizey=2.5 -miny=0 -minx=0 -maxx=1800 -extend-to-right \
     -colors='#377eb8,#e41a1c,#377eb8,#ff7f00,#ff7f00' -linestyles=-,-.,:,--,-. \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$ s' \
     -o=ipc_runtimes.pdf
     
     plot_curves.py \
@@ -47,14 +47,14 @@ function plot_lilotane_1v1s() {
     "
 
     plot_1v1.py \
-    data/qtimes_Lilotane_noopt -l='Run time of \textsc{Lilotane} [s]' \
-    data/qtimes_Tree-REX -l='Run time of \textsc{Tree-REX} [s]' \
+    data/qtimes_Lilotane_noopt -l='Running time of \textsc{Lilotane} [s]' \
+    data/qtimes_Tree-REX -l='Running time of \textsc{Tree-REX} [s]' \
     -T=300 -max=600 $params \
     -o=LvT_runtimes.pdf
     
     plot_1v1.py \
-    data/qtimes_Lilotane_noopt -l='Run time of \textsc{Lilotane} [s]' \
-    data/qtimes_PANDA-totSAT -l='Run time of \textsc{PANDA-totSAT} [s]' \
+    data/qtimes_Lilotane_noopt -l='Running time of \textsc{Lilotane} [s]' \
+    data/qtimes_PANDA-totSAT -l='Running time of \textsc{PANDA-totSAT} [s]' \
     -T=300 -max=600 $params \
     -o=LvP_runtimes.pdf
     

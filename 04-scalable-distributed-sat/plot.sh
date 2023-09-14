@@ -38,7 +38,7 @@ function plot_sateval_portfolio_crosschecking() {
     -linestyles=--,:,--,-,-,-,: -lw=1 -nomarkers -markers=^,d,+,s,v,x,1 -markersize=4 \
     -colors='#377eb8,#ff7f00,#e41a1c,#ff7f00,#f781bf,#a65628,#999999,#dede00,#377eb8' \
     -lloc=4 -sizex=$halfwidth -sizey=3 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-portfolio-crosschecking.pdf
 }
 
@@ -50,7 +50,7 @@ function plot_sateval_diversification() {
     data/isc22-selection/nosharing-nodiversification/cdf -l='$-$div. $-$sharing' \
     -linestyles=-,:,-,: -colors=blue,blue,orange,orange -no-markers -markersize=4 \
     -xy -extend-to-right -minx=0.15 -maxx=300 -miny=0 -maxy=330 -lloc=2 -sizex=3.3 -sizey=2.8 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' -logx \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' -logx \
     -o=sateval-portfolio-no-use-of-diversification-all-logx.pdf
 }
 
@@ -71,7 +71,7 @@ function plot_sateval_filter() {
     -linestyles=-,--,-.,: -colors='blue,darkblue,orange,red' \
     -lw=1.2 -no-markers -markers=v,^,x -markersize=4 \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=200 -maxy=330 -sizex=$halfwidth -sizey=2.6 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-clause-filtering.pdf
 }
 
@@ -88,7 +88,7 @@ function plot_sateval_buflim_growth_params() {
     -linestyles=-,--,-,--,-,--,-,-- -colors=blue,blue,gray,gray,orange,orange,red,red -no-markers -markersize=3 \
     -xy -extend-to-right -minx=0 -maxx=299.5 -miny=200 -maxy=335 -lloc=4 \
     -sizex=$(echo "0.5 * $fullwidth"|bc -l) -sizey=3.2 -legend-spacing=0.25 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-buffer-scaling.pdf
 }
 
@@ -105,7 +105,7 @@ function plot_sateval_scaling() {
     data/isc21/kissatmabhywalk/cdf -l='seq.' \
     -linestyles=-,--,-.,: -lw=1.4 -nomarkers -legend-spacing=0.25 \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=0 -maxy=340 -sizex=$halfwidth -sizey=3.1 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-scaling-cdf.pdf
 }
 
@@ -114,7 +114,7 @@ function plot_sateval_speedupscatter() {
     ( echo "0.015 $c" ; echo "99999 $c" ) > .y$c
     plot_curves.py data/isc21/mallob_scaling_1x1x24/speedupscatter-{unsat,sat} -l='unsatisfiable' -l='satisfiable' \
     .y$c -l=None \
-    -labelx='Run time of sequential solver [s]' -labely="Speedup at $c cores" -markersize=4 \
+    -labelx='Running time of sequential solver [s]' -labely="Speedup at $c cores" -markersize=4 \
     -linestyles=None,None,: -xy -logx -logy -markers=x,+,None -gridx -gridy -colors='#ff7f00,#377eb8,#666666' \
     -sizex=$halfwidth -sizey=$halfwidth -minx=0.015 -maxx=99999 -miny=0.05 -maxy=500000 -potticks \
     -o=sateval-scatteredspeedups-${c}cores.pdf
@@ -123,7 +123,7 @@ function plot_sateval_speedupscatter() {
     ( echo "0.015 $c" ; echo "99999 $c" ) > .y$c
     plot_curves.py data/isc21/mallob_scaling_64x2x24/speedupscatter-{unsat,sat} -l='unsatisfiable' -l='satisfiable' \
     .y$c -l=None \
-    -labelx='Run time of sequential solver [s]' -labely="Speedup at $c cores" -markersize=4 \
+    -labelx='Running time of sequential solver [s]' -labely="Speedup at $c cores" -markersize=4 \
     -linestyles=None,None,: -xy -logx -logy -markers=x,+,None -gridx -gridy -colors='#ff7f00,#377eb8,#666666' \
     -sizex=$halfwidth -sizey=$halfwidth -minx=0.015 -maxx=99999 -miny=0.05 -maxy=500000 -potticks \
     -o=sateval-scatteredspeedups-${c}cores.pdf
@@ -156,7 +156,7 @@ function plot_sateval_mallob_v_horde() {
     data/isc21/mallob_scaling-lingelingonly_32x2x24/cdf -l='\textsc{MallobSat} L' \
     data/isc21/horde_32x12x4/cdf -l='\textsc{HordeSat}' \
     -xy -minx=0 -maxx=300 -miny=0 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=:,-,- -lw=1.3 \
     -sizex=$halfwidth -sizey=2.6 -o=cdf-mallob-vs-horde-final.pdf
 }
@@ -166,7 +166,7 @@ function plot_sateval_sharing_v_nosharing() {
     data/isc21/mallob_scaling_64x2x24/cdf -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf -l='No sharing' \
     -xy -minx=0 -maxx=300 -miny=0 -nolegend \
-    -labelx='Run time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='Overall' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -ticksy=0,100,200,300 \
     -o=sateval-sharing-vs-nosharing-overall.pdf
@@ -174,7 +174,7 @@ function plot_sateval_sharing_v_nosharing() {
     data/isc21/mallob_scaling_64x2x24/cdf-sat -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf-sat -l='No sharing' \
     -xy -minx=0 -maxx=300 -miny=0 -nolegend \
-    -labelx='Run time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='SAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=165 -ticksy=0,50,100,150 \
     -o=sateval-sharing-vs-nosharing-sat.pdf
@@ -182,7 +182,7 @@ function plot_sateval_sharing_v_nosharing() {
     data/isc21/mallob_scaling_64x2x24/cdf-unsat -l='Sharing' \
     data/isc21/mallob_scaling-nosharing_64x2x24/cdf-unsat -l='No sharing' \
     -xy -minx=0 -maxx=300 -miny=0 -nolegend \
-    -labelx='Run time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
     -title='UNSAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=185 -ticksy=0,50,100,150 \
     -o=sateval-sharing-vs-nosharing-unsat.pdf
@@ -220,32 +220,30 @@ function plot_sateval_buflim_scaling() {
 
 function plot_disturbances() {
     plot_curves.py \
-    data/scheduling/mallob_undisturbed_1536/cdf -l='1536' \
-    data/scheduling/mallob_disturbance_768-to-1536/cdf.0 -l='768--1536' \
-    data/scheduling/mallob_undisturbed_768/cdf -l='768' \
-    data/scheduling/mallob_disturbance_384-to-1536/cdf.0 -l='384--1536' \
-    data/scheduling/mallob_undisturbed_384/cdf -l='384' \
+    data/malleable/disturbance/mallob_undisturbed_1536/cdf -l='1536' \
+    data/malleable/disturbance/mallob_disturbance_768-to-1536/cdf.0 -l='768--1536' \
+    data/malleable/disturbance/mallob_undisturbed_768/cdf -l='768' \
+    data/malleable/disturbance/mallob_disturbance_384-to-1536/cdf.0 -l='384--1536' \
+    data/malleable/disturbance/mallob_undisturbed_384/cdf -l='384' \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=250 -maxy=335 -nomarkers \
     -linestyles=-,-.,-,-.,- -sizex=$halfwidth -sizey=2.7 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-disturbances-cdf.pdf
 }
 
 function plot_scheduling() {
-    # scheduling experiment
-    
     plot_curves.py \
-    data/scheduling/mallob_1600x4_malleable/cdf -l='Mall 1600$\times$4' \
-    data/scheduling/mallob_1600x4_rigid/cdf -l='Rigid 1600$\times$4' \
-    data/scheduling/mallob_400x4_malleable/cdf -l='Mall 400$\times$4' \
-    data/scheduling/mallob_400x4_rigid/cdf -l='Rigid 400$\times$4' \
-    data/scheduling/mallob_400x1_malleable/cdf -l='Mall 400$\times$1' \
+    data/malleable/scheduling/mallob_1600x4_malleable/cdf -l='Mall 1600$\times$4' \
+    data/malleable/scheduling/mallob_1600x4_rigid/cdf -l='Rigid 1600$\times$4' \
+    data/malleable/scheduling/mallob_400x4_malleable/cdf -l='Mall 400$\times$4' \
+    data/malleable/scheduling/mallob_400x4_rigid/cdf -l='Rigid 400$\times$4' \
+    data/malleable/scheduling/mallob_400x1_malleable/cdf -l='Mall 400$\times$1' \
     data/isc21/kissatmabhywalk/cdf -l='400$\times$\textsc{Kissat}' \
-    data/scheduling/mallob_undisturbed_1536/accumulated-cdf -l='OOS 1536 c.' \
-    data/scheduling/mallob_undisturbed_384/accumulated-cdf -l='OOS 384 c.' \
+    data/malleable/disturbance/mallob_undisturbed_1536/accumulated-cdf -l='OOS 1536 c.' \
+    data/malleable/disturbance/mallob_undisturbed_384/accumulated-cdf -l='OOS 384 c.' \
     -extend-to-right -lloc=4 -legend-spacing=0.25 -minx=0 -maxx=7200 -miny=0 -maxy=355 -xy \
     -nomarkers -linestyles=-,--,-,--,-,--,:,: \
-    -sizex=$halfwidth -sizey=3 -labelx='Total run time [s]' -labely='\# finished jobs' \
+    -sizex=$halfwidth -sizey=3 -labelx='Total running time [s]' -labely='\# finished jobs' \
     -ticksx=0,1800,3600,5400,7200 -colors=orange,orange,red,red,blue,blue,#555555,#bbbbbb \
     -o=sateval-scheduling-cdf.pdf
 }
@@ -256,10 +254,10 @@ function plot_isc22_post_comparison() {
     data/post-isc22/isc22-64hwthreads-parkissat-rs-cdf.txt -l='\textsc{ParkissatRS}' \
     data/post-isc22/isc22-64hwthreads-ki-cdf.txt -l='\textsc{MallobSat} K $\alpha$=$1$' \
     data/post-isc22/isc22-64hwthreads-li-cdf.txt -l='\textsc{MallobSat} L $\alpha$=$0.9$' \
-    -xy -minx=0 -maxx=1000 -miny=0 -maxy=300 \
-    -labelx='Run time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
+    -xy -minx=0 -maxx=999 -miny=0 -maxy=300 \
+    -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -linestyles=:,-,--,-. -lw=1.3 \
-    -sizex=$halfwidth -sizey=2.6 -o=isc22-rerun.pdf
+    -sizex=$(echo "0.6*$fullwidth"|bc -l) -sizey=2.6 -o=isc22-rerun.pdf
 }
 
 function plot_weak_scaling_overview() {
@@ -270,12 +268,11 @@ function plot_1v1_paracooba() {
     plot_1v1.py data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' -T=1000 -max=1500 -logscale -markersize=4 -domainmarkers=+,. -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
 }
 
-#plot_buffer_limit_parametrization
-#plot_sateval_portfolio_crosschecking
-#plot_sateval_diversification
-#plot_sateval_clause_buffers
+plot_buffer_limit_parametrization
+plot_sateval_portfolio_crosschecking
+plot_sateval_diversification
+plot_sateval_clause_buffers
 plot_sateval_filter
-exit 0
 plot_sateval_buflim_growth_params
 plot_sateval_scaling
 plot_sateval_speedupscatter
