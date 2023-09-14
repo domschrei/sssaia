@@ -74,6 +74,6 @@ function plot_lilotane_1v1s() {
     -o=LvP_clauses.pdf
 }
 
-#plot_sat_planners_cdf
+plot_sat_planners_cdf
 plot_ipc_followup_cdfs
-#plot_lilotane_1v1s
+plot_lilotane_1v1s

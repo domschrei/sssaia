@@ -282,7 +282,6 @@ function plot_1v1_paracooba() {
 }
 
 plot_buffer_limit_parametrization
-exit 0
 plot_sateval_portfolio_crosschecking
 plot_sateval_diversification
 plot_sateval_clause_buffers
