@@ -49,7 +49,7 @@ function plot_sateval_diversification() {
     data/isc22-selection/nosharing/cdf -l='$+$div. $-$sharing' \
     data/isc22-selection/nosharing-nodiversification/cdf -l='$-$div. $-$sharing' \
     -linestyles=-,:,-,: -colors=blue,blue,orange,orange -no-markers -markersize=4 \
-    -xy -extend-to-right -minx=0.15 -maxx=300 -miny=0 -maxy=330 -lloc=2 -sizex=3.3 -sizey=2.8 \
+    -xy -extend-to-right -minx=0.15 -maxx=300 -miny=0 -maxy=330 -lloc=2 -sizex=$halfwidth -sizey=2.6 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' -logx \
     -o=sateval-portfolio-no-use-of-diversification-all-logx.pdf
 }
