@@ -274,27 +274,29 @@ function plot_weak_scaling_overview() {
 }
 
 function plot_1v1_paracooba() {
+    head -10 data/post-isc22/qtimes-anni-clo-paracooba-solved > _
+    head -10 data/post-isc22/qtimes-anni-clo-mallob-solved > __
     plot_1v1.py \
-    data/post-isc22/qtimes-anni-clo-paracooba-solved -l='Running time of \textsc{Paracooba} [s]' \
-    data/post-isc22/qtimes-anni-clo-mallob-solved -l='Running time of \textsc{MallobSat} [s]' \
+    _ -l='Running time of \textsc{Paracooba} [s]' \
+    __ -l='Running time of \textsc{MallobSat} [s]' \
     -T=1000 -max=1500 -logscale -markersize=3.4 -domainmarkers=+,. -domaincolors='#377eb8,#ff9900' \
     -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
 }
 
-plot_buffer_limit_parametrization
-plot_sateval_portfolio_crosschecking
-plot_sateval_diversification
-plot_sateval_clause_buffers
-plot_sateval_filter
-plot_sateval_buflim_growth_params
-plot_sateval_scaling
-plot_sateval_speedupscatter
-plot_sateval_geomspeedups
-plot_sateval_mallob_v_horde
-plot_sateval_sharing_v_nosharing
-plot_sateval_buflim_scaling
-plot_disturbances
-plot_scheduling
-plot_isc22_post_comparison
-plot_weak_scaling_overview
+#plot_buffer_limit_parametrization
+#plot_sateval_portfolio_crosschecking
+#plot_sateval_diversification
+#plot_sateval_clause_buffers
+#plot_sateval_filter
+#plot_sateval_buflim_growth_params
+#plot_sateval_scaling
+#plot_sateval_speedupscatter
+#plot_sateval_geomspeedups
+#plot_sateval_mallob_v_horde
+#plot_sateval_sharing_v_nosharing
+#plot_sateval_buflim_scaling
+#plot_disturbances
+#plot_scheduling
+#plot_isc22_post_comparison
+#plot_weak_scaling_overview
 plot_1v1_paracooba

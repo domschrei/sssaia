@@ -44,7 +44,7 @@ cat .bad .worst .good > ._
 plot_1v1.py ._ -l='Running time of seq. \textsc{Lilotane} [s]' .__ -l='Running time of \textsc{Mallotane} [s]' \
 -min=0.01 -max=3000 -T=1800 -markersize=4.3 \
 -domainmarkers='^,v,<,>,P,d,s,D,+,1,x,2,o' \
--domaincolors='#0af,#0af,#0af,#0af,#0af,#ff7f00,#ff7f00,#ff7f00,#377eb8,#377eb8,#377eb8,#377eb8,#377eb8' \
+-domaincolors='#ff7f00,#ff7f00,#ff7f00,#ff7f00,#ff7f00,#e41a1c,#e41a1c,#e41a1c,#377eb8,#377eb8,#377eb8,#377eb8,#377eb8' \
 -legendright -legend-cols=1 `#-legend-offset-y=-0.35` -legend-spacing=0.3 -logscale \
 -size=4.8 -domainlabels='Assembly,Barman,Rover,Satellite,Transport,BlocksworldH,Entertainment,Towers,Elevator,Freecell,Logistics,MinecraftP,Multiarm' \
 -o=scatter-lilotane-vs-mallotane-corrected.pdf

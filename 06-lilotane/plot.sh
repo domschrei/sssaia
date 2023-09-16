@@ -43,35 +43,37 @@ function plot_ipc_followup_cdfs() {
 function plot_lilotane_1v1s() {
 
     params="
-    -logscale -size=$halfwidth -markersize=4.5
+    -logscale -markersize=4.5
     -domainmarkers=^,v,<,>,+,x,o,s,p,P,d,D
     -ol=LvT_legend.pdf 
     -potticks
     "
 
     plot_1v1.py \
-    data/qtimes_Lilotane_noopt -l='Running time of \textsc{Lilotane} [s]' \
+    data/qtimes_Lilotane_noopt -l='' \
     data/qtimes_Tree-REX -l='Running time of \textsc{Tree-REX} [s]' \
-    -T=300 -max=600 $params \
+    -T=300 -max=600 $params -size=$halfwidth \
     -o=LvT_runtimes.pdf
     
     plot_1v1.py \
     data/qtimes_Lilotane_noopt -l='Running time of \textsc{Lilotane} [s]' \
-    data/qtimes_PANDA-totSAT -l='Running time of \textsc{PANDA-totSAT} [s]' \
-    -T=300 -max=600 $params \
+    data/qtimes_PANDA-totSAT -l='Running time of \textsc{PANDA} [s]' \
+    -T=300 -max=600 $params -size=$halfwidth \
     -o=LvP_runtimes.pdf
     
     plot_1v1.py \
-    data/qclauses_Lilotane -l='Clauses of \textsc{Lilotane}' \
+    data/qclauses_Lilotane -l='' \
     data/qclauses_Tree-REX -l='Clauses of \textsc{Tree-REX}' \
-    -T=500000000 -max=100000000 $params \
+    -T=500000000 -max=99999999 $params -size=$(echo "0.482*$fullwidth"|bc -l) \
     -o=LvT_clauses.pdf
     
     plot_1v1.py \
     data/qclauses_Lilotane -l='Clauses of \textsc{Lilotane}' \
-    data/qclauses_PANDA-totSAT -l='Clauses of \textsc{PANDA-totSAT}' \
-    -T=500000000 -max=100000000 $params \
+    data/qclauses_PANDA-totSAT -l='Clauses of \textsc{PANDA}' \
+    -T=500000000 -max=99999999 $params -size=$(echo "0.482*$fullwidth"|bc -l) \
     -o=LvP_clauses.pdf
+    
+    for f in *v*_{runtimes,clauses}.pdf; do pdfcrop $f $f ; done
 }
 
 plot_sat_planners_cdf
