@@ -10,9 +10,9 @@ thirdwidth=$(echo "$fullwidth / 3"|bc -l)
 function plot_buffer_limit_parametrization() {
     plot_curves.py \
     data/buflim/buffer-limit-scaling_param1 -l='$\alpha=1$' \
-    data/buflim/buffer-limit-scaling_param0.875 -l='$\alpha=7/8$' \
-    data/buflim/buffer-limit-scaling_param0.75 -l='$\alpha=6/8$' \
-    data/buflim/buffer-limit-scaling_param0.625 -l='$\alpha=5/8$' \
+    data/buflim/buffer-limit-scaling_param0.875 -l='$\alpha=7$/$8$' \
+    data/buflim/buffer-limit-scaling_param0.75 -l='$\alpha=6$/$8$' \
+    data/buflim/buffer-limit-scaling_param0.625 -l='$\alpha=5$/$8$' \
     data/buflim/buffer-limit-scaling_param1000000 -l='$L=1\,000\,000$' \
     data/buflim/buffer-limit-scaling_param500000 -l='$L=500\,000$' \
     data/buflim/buffer-limit-scaling_param200000 -l='$L=200\,000$' \
@@ -170,7 +170,7 @@ function plot_sateval_sharing_v_nosharing() {
     -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
-    -title='Overall' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -ticksy=0,100,200,300 \
+    -title='\textsc{O}verall' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -ticksy=0,100,200,300 \
     -o=sateval-sharing-vs-nosharing-overall.pdf
     plot_curves.py \
     data/isc21/mallob_scaling_64x2x24/cdf-sat -l='Sharing' \
@@ -178,7 +178,7 @@ function plot_sateval_sharing_v_nosharing() {
     -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
-    -title='SAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=165 -ticksy=0,50,100,150 \
+    -title='\textsc{SAT}' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=165 -ticksy=0,50,100,150 \
     -o=sateval-sharing-vs-nosharing-sat.pdf
     plot_curves.py \
     data/isc21/mallob_scaling_64x2x24/cdf-unsat -l='Sharing' \
@@ -186,7 +186,7 @@ function plot_sateval_sharing_v_nosharing() {
     -xy -minx=0 -maxx=300 -miny=0 -nolegend -gridx -gridy \
     -labelx='Running time $t$ [s]' -labely='\# solved in $\leq t$\,s' \
     -nomarkers -extend-to-right -colors='#377eb8,#377eb8,#e41a1c' -linestyles=-,:,-,- -lw=1.3 \
-    -title='UNSAT' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=185 -ticksy=0,50,100,150 \
+    -title='\textsc{UNSAT}' -sizex=$thirdwidth -sizey=2 -ticksx=0,100,200,300 -maxy=185 -ticksy=0,50,100,150 \
     -o=sateval-sharing-vs-nosharing-unsat.pdf
 }
 
@@ -229,7 +229,7 @@ function plot_disturbances() {
     data/malleable/disturbance/mallob_undisturbed_384/cdf -l='384' \
     -xy -extend-to-right -minx=0 -maxx=300 -miny=250 -maxy=335 -nomarkers \
     -linestyles=-,-.,-,-.,- -sizex=$halfwidth -sizey=2.7 \
-    -ticksx=0,60,120,180,240,300 -gridx -gridy \
+    -ticksx=0,60,120,180,240,300 -gridx -gridy -colors=#377eb8,#ff7f00,#e41a1c,#f781bf,#dede00 \
     -labelx='Running time $t$ [s]' -labely='\# instances solved in $\leq t$\,s' \
     -o=sateval-disturbances-cdf.pdf
 }
@@ -267,7 +267,7 @@ function plot_weak_scaling_overview() {
     plot_curves.py data/isc21/mallob_weakscaling/mallob-speedups-min-tseq-{3072,1536,768,384,192,96,48,24} -l={3072,1536,768,384,192,96,48,24} \
     -xy -minx=0 -miny=0 -maxy=800 -nomarkers \
     -labelx='Sequential running time threshold $x$ [s]' \
-    -labely='Speedup on instances with $T_{seq}\geq x$' \
+    -labely='Speedup on instances with $T_{\mathrm{seq}}\geq x$' \
     -sizex=$(echo "0.8*$fullwidth"|bc -l) -sizey=3 -legend-right \
     -ticksx=0,1800,3600,5400,7200 -gridx \
     -ticksy=0,100,200,300,400,500,600,700,800 -gridy -lw=1.2 -o=weak-scaling-overview.pdf
@@ -283,20 +283,20 @@ function plot_1v1_paracooba() {
     -o=1v1-paracooba.pdf -size=$(echo "0.8*$fullwidth"|bc -l)
 }
 
-#plot_buffer_limit_parametrization
-#plot_sateval_portfolio_crosschecking
-#plot_sateval_diversification
-#plot_sateval_clause_buffers
-#plot_sateval_filter
-#plot_sateval_buflim_growth_params
-#plot_sateval_scaling
-#plot_sateval_speedupscatter
-#plot_sateval_geomspeedups
-#plot_sateval_mallob_v_horde
-#plot_sateval_sharing_v_nosharing
-#plot_sateval_buflim_scaling
-#plot_disturbances
-#plot_scheduling
-#plot_isc22_post_comparison
-#plot_weak_scaling_overview
+plot_buffer_limit_parametrization
+plot_sateval_portfolio_crosschecking
+plot_sateval_diversification
+plot_sateval_clause_buffers
+plot_sateval_filter
+plot_sateval_buflim_growth_params
+plot_sateval_scaling
+plot_sateval_speedupscatter
+plot_sateval_geomspeedups
+plot_sateval_mallob_v_horde
+plot_sateval_sharing_v_nosharing
+plot_sateval_buflim_scaling
+plot_disturbances
+plot_scheduling
+plot_isc22_post_comparison
+plot_weak_scaling_overview
 plot_1v1_paracooba

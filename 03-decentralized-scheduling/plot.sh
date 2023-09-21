@@ -31,7 +31,7 @@ plot_curves.py data/mallob_realistic_default/loads_slavg_{1,15,60}s -xy -nomarke
 plot_curves.py data/huca{0,10,100,infty}/histogram-init-normalized -xy \
 -l='$h=0$' -l='$h=10$' -l='$h=100$' -l='$h=\infty$' -minx=0 -maxx=0.07 -miny=0.003 -maxy=0.27 \
 -linestyles=-.,:,--,- -nomarkers -sizex=$halfwidth -sizey=2.2 -logy \
--labelx='Init. scheduling latency [s]' -labely='Density' -o=chaos-latency-init.pdf
+-labelx='Initial scheduling latency [s]' -labely='Density' -o=chaos-latency-init.pdf
 
 plot_curves.py data/huca{0,10,100,infty}/histogram-treegrowth-normalized -xy \
 -l='$h=0$' -l='$h=10$' -l='$h=100$' -l='$h=\infty$' -minx=0 -maxx=0.07 -miny=0.0005 -maxy=0.21 \

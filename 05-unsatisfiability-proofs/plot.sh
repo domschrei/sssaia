@@ -32,7 +32,7 @@ data/${mode}-solvingtime-lratchecktime-ratio -l='chk' \
 data/${mode}-solvingtime-lratpostprocesstime-ratio -l='post' \
 data/${mode}-solvingtime-lratcombinetime-ratio -l='asm' \
 -linestyles=-,None,None,None,None -markers='None,x,+,1,2' -gridx -gridy \
--colors="black,#377eb8,#ff7f00,#08f,#e41a1c" -legend-spacing=0.1 \
+-colors="black,#377eb8,#ff7f00,#00b6ff,#e41a1c" -legend-spacing=0.1 \
 -markersize=4 -xy -logx -logy -minx=2.5 -maxx=1000 -miny=0.001 -maxy=300 \
 -labelx='Solving time [s]' -labely='Relative overhead of proof stage [s]' \
 -sizex=$halfwidth -sizey=$halfwidth -title='\textsc{MallobSatP64} (Par.)' \
@@ -44,7 +44,7 @@ data/${mode}-solvingtime-lratchecktime-ratio -l='chk' \
 data/${mode}-solvingtime-lratpostprocesstime-ratio -l='post' \
 data/${mode}-solvingtime-lratcombinetime-ratio -l='asm' \
 -linestyles=-,None,None,None,None -markers='None,x,+,1,2' -gridx -gridy \
--colors="black,#377eb8,#ff7f00,#08f,#e41a1c" -legend-spacing=0.1 \
+-colors="black,#377eb8,#ff7f00,#00b6ff,#e41a1c" -legend-spacing=0.1 \
 -markersize=4 -xy -logx -logy -minx=2.5 -maxx=1000 -miny=0.001 -maxy=300 -lloc=3 \
 -labelx='Solving time [s]' -labely='Relative overhead of proof stage [s]' \
 -sizex=$halfwidth -sizey=$halfwidth -title='\textsc{MallobSatP1600}' -nolegend \

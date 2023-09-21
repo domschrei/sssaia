@@ -15,9 +15,9 @@ cat data/ipc-followup-lilotane-satcalls-and-total | awk '{for (i=2;i<=NF-1;i++) 
 -sizex=$halfwidth -sizey=2.7 -extend-to-right -potticksx -gridx -gridy \
 -nolegend -o=lilotane-sat-call-duration-cdf.pdf
 
-cat data/ipc-followup-lilotane-satcalls-and-total | awk '{sattime=0; for (i=2;i<=NF-1;i++) {sattime+=$i}; print $NF,sattime/$NF}' \
-| plot_curves.py -xy -markers='+' -nolines -l='' -logx -miny=-0.02 -maxy=1.02 -minx=0.0013 -maxx=2200 -gridx -gridy \
--labelx='Running time [s]' -labely='Ratio of time spent in SAT solver' -sizex=$halfwidth -sizey=2.7 \
+cat data/ipc-followup-lilotane-satcalls-and-total | awk '{sattime=0; for (i=2;i<=NF-1;i++) {sattime+=$i}; print $NF,sattime/$NF}' > .out
+plot_curves.py .out -xy -markers='x' -markersize=4 -linestyles=None -l=None -miny=-0.02 -maxy=1.02 -minx=0.0013 -maxx=2200 -logx -gridx -gridy \
+-labelx='Running time [s]' -labely='Ratio of time spent on SAT' -sizex=$halfwidth -sizey=2.7 \
 -potticksx -nolegend -o=lilotane-scatter-ratio-of-sat-time.pdf
 
 
@@ -55,19 +55,19 @@ plot_curves.py data/satcalls-{par,seq}-SAT-normcdf -xy -nomarkers -lw=1.4 -lines
 -l=M -l='L' -labelx='Running time $t$ [s]' -labely='Pr\,[call takes $\leq t$\,s]' \
 -minx=0 -maxx=1600 -extend-to-right -miny=0.7 -maxy=1.01 -sizex=$thirdwidth -sizey=2.1 \
 -ticksx=0,500,1000,1500 -lloc=4 -gridx -gridy \
--title='SAT' -o=mallotane-satcall-cdf-sat.pdf
+-title='\textsc{SAT}' -o=mallotane-satcall-cdf-sat.pdf
 
 plot_curves.py data/satcalls-{par,seq}-UNSAT-normcdf -xy -nomarkers -lw=1.4 -linestyles=-,: \
 -l=M -l='L' -labelx='Running time $t$ [s]' -labely='Pr\,[call takes $\leq t$\,s]' \
 -minx=0 -maxx=1300 -extend-to-right -miny=0.996 -maxy=1.0001 -sizex=$thirdwidth -sizey=2.1 \
 -ticksx=0,500,1000 -lloc=4 -gridx -gridy -ticksy=0.996,0.997,0.998,0.999,1.000  \
--title='UNSAT' -o=mallotane-satcall-cdf-unsat.pdf
+-title='\textsc{UNSAT}' -o=mallotane-satcall-cdf-unsat.pdf
 
 plot_curves.py data/satcalls-{par,seq}-UNSAT-normcdf -xy -nomarkers -lw=1.4 -linestyles=-,: \
 -l=M -l='L' -labelx='Running time $t$ [s]' -labely='Pr\,[call takes $\leq t$\,s]' -lloc=4 \
 -minx=0 -maxx=0.6 -extend-to-right -miny=0.5 -maxy=1 -sizex=$thirdwidth -sizey=2.1 \
 -gridx -gridy -ticksx=0,0.2,0.4,0.6 -ticksy=0.5,0.6,0.7,0.8,0.9,1.0 \
--title='UNSAT ($\leq 0.6\,$s)' -o=mallotane-satcall-cdf-unsat-short.pdf
+-title='\textsc{UNSAT} ($\leq 0.6\,$s)' -o=mallotane-satcall-cdf-unsat-short.pdf
 
 
 plot_curves.py data/volumehistory-assembly-depth07 -xy -nomarkers -lw=1 -linestyles=- \
