@@ -1,0 +1,14 @@
+
+benchmarkfile=benchmarks.txt
+nbenchmarks=$(cat $benchmarkfile|wc -l)
+
+cmd="
+build/mallob -q -c=1 -ajpc=1 -sleep=1000 -ljpc=8 -J=$nbenchmarks -T=$timeout -log=$logdir -v=4 \
+-job-template=instances/job-template-isc22.json -job-desc-template=$benchmarkfile \
+-client-template=instances/client-template-isc22.json -sro=${logdir}/processed-jobs.out -sjd=1 -jwl=300 \
+`#deployment` -rpa=1 -pph=2 -mlpt=50000000 -t=24 \
+`#portfolio,diversification` -satsolver=kcl -isp=0 -div-phases=0 -div-noise=0 -div-seeds=0 -div-elim=0 -scsd=1 \
+`#sharingsetup` -scll=60 -slbdl=60 -csm=2 -mlbdps=5 -cfm=3 -cfci=30 -mscf=5 -bem=1 -aim=1 -rlbd=0 -ilbd=1 \
+`#sharingvolume` -s=0.5 -cbbs=4500 -cblm=1 -cblp=100000 -cusv=1 \
+`#randomseed` -seed=0
+"

@@ -1,0 +1,5 @@
+Instance result Mallob32 Mallob64 Mallob1600 Malloblin
+WS_500_32_50_10.apx_2_DC-AD.cnf unsat 3792.998 3276.691 354.674 279.822
+eqspctbk14spwtcl14.cnf unsat 10000.0 10000.0 650.45 2000.0
+php16-mixed-15percent-blocked.cnf unsat 10000.0 10000.0 356.651 2000.0
+TableModel_output_6_3_8.bul_.dimacs.cnf sat 10000.0 2417.478 577.132 2000.0 

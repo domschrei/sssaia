@@ -3,14 +3,18 @@
 _Experimental data_
 
 This repository contains the experimental data gathered for and presented in Dominik Schreiber's dissertation _Scalable SAT Solving and its Application_.
-The data is organized by chapters.
+At this point in time, (almost) all plots can be reproduced and most of the discussed data is available. Exceptions include the full log files, since these amount to hundreds of Gigabytes. We also reference the used software as well as digital appendices/repositories of the original publications where applicable. 
+
+The data is organized by chapters - see the respective subdirectories.
 
 ## Creating Plots
 
 Prerequisites:
 
 * Linux toolchain
-* Python3, PyPlot, LaTeX installation
-* The script [`plot_curves.py`](https://raw.githubusercontent.com/domschrei/plotscripts/f7842d3e886b09748e95ea853a60469f4a27a691/plot_curves.py) must be in the user's `$PATH`.
+* Python3, Matplotlib/PyPlot, LaTeX installation
+* The scripts from the [plotscripts repository](https://raw.githubusercontent.com/domschrei/plotscripts/e5e980e300cc68dedbdd40b1b6b33bb998ff7fcd/plot_curves.py) must be in the user's `$PATH`.
 
 Execute `bash plot-all.sh`, or, in one of the subdirectories, `bash plot.sh`.
+
+Similarly, use `clean.sh` and `clean-all.sh` to remove the files.

@@ -3,6 +3,7 @@
 ## Software
 
 * [Mallob](https://github.com/domschrei/mallob)
+    - Commit 72cab2a743ab5166deaac1c8fd784ef1cbac6fd3 essentially corresponds to our evaluations.
 * [HordeSat](https://github.com/domschrei/hordesat)
 * [Kissat-MAB_HyWalk](https://satcompetition.github.io/2022/downloads/sequential-solvers.zip)
 
@@ -20,3 +21,7 @@ The directory `data` features the following directories:
 * `isc21`: All experiments regarding isolated SAT solving performance on the 400 benchmarks from ISC 2021.
 * `scheduling`: The experiments on malleable SAT solving and massively parallel processing of SAT tasks (also with ISC 2021 benchmarks).
 * `post-isc22`: Follow-up experiment regarding the parallel track of ISC 2022.
+
+## Configurations
+
+File `data/base-options` provides the base options we ran Mallob with. Additional `options` files as well as `sbatch` scripts give further information on how the individual runs were configured and executed.
