@@ -9,4 +9,4 @@
 ## Benchmarks
 
 * IPC 2020 benchmarks: See the [repository of our original journal publication](https://github.com/domschrei/lilotane-experimental-data).
-    - Selection of 587 benchmarks: (to be added)
+    - Selection of 587 benchmarks: see `data/benchmarks`
