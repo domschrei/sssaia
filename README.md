@@ -2,7 +2,8 @@
 
 _Experimental data_
 
-This repository contains the experimental data gathered for and presented in Dominik Schreiber's dissertation _Scalable SAT Solving and its Application_.
+This repository contains the experimental data gathered for and presented in Dominik Schreiber's dissertation _Scalable SAT Solving and its Application_ and in follow-up works.
+
 At this point in time, (almost) all plots can be reproduced and most of the discussed data is available. Exceptions include the full log files, since these amount to hundreds of Gigabytes. We also reference the used software as well as digital appendices/repositories of the original publications where applicable. 
 
 The data is organized by chapters - see the respective subdirectories.
