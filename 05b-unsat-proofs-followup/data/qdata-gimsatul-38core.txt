@@ -1,0 +1,238 @@
+003-23-80.cnf SAT 18.82
+005-80-12.cnf SAT 116.18
+006.cnf SAT 21.40
+008-80-8.cnf SAT 105.56
+20-100-lambda100-49_sat.cnf SAT 18.01
+20-100-lambda100-89_sat.cnf SAT 21.64
+20-100-p100-55_sat.cnf SAT 41.98
+20180321_140826713_p_cnf_320_1120.cnf SAT 0.75
+4g_5color_166_100_02.cnf SAT 89.75
+50bits_11.dimacs.cnf SAT 122.25
+6s105_Iter35.cnf UNSAT 87.12
+6s133-sc2014.cnf UNSAT 96.38
+6s158_Iter2.cnf UNSAT 13.73 1043.460
+6s184.cnf UNSAT 71.85
+6s186_Iter20.cnf UNSAT 26.42
+6s22_Iter57.cnf UNSAT 118.45 403.068
+6s320rb1_Iter8.cnf UNSAT 72.99
+6s320rb1_Iter9.cnf SAT 91.21
+9dlx_vliw_at_b_iq6.cnf UNSAT 184.71 1303.562
+ablmulub16x4o.cnf UNSAT 8.69
+abw-V-nos6.mtx-w220.cnf SAT 108.82
+aes_32_2_keyfind_1.cnf SAT 14.89
+af-synthesis_stb_50_120_4_unsat.cnf UNSAT 107.05
+af-synthesis_stb_50_140_0_sat.cnf SAT 7.26
+af-synthesis_stb_50_140_1_sat.cnf SAT 5.69
+af-synthesis_stb_50_140_3_sat.cnf SAT 2.03
+af-synthesis_stb_50_200_4_sat.cnf SAT 4.89
+af-synthesis_stb_50_20_8_sat.cnf SAT 2.31
+af-synthesis_stb_50_20_8_unsat.cnf UNSAT 153.62
+af-synthesis_stb_50_40_2_sat.cnf SAT 6.23
+af-synthesis_stb_50_80_7_sat.cnf SAT 10.14
+af-synthesis_stb_50_80_7_unsat.cnf UNSAT 189.85
+atco_enc1_opt2_10_15.cnf UNSAT 17.24
+atco_enc1_opt2_10_16-sc2014.cnf SAT 23.68
+atco_enc3_opt1_03_53.cnf SAT 162.19
+aws-encryption-sdk-c:aws_cryptosdk_priv_hdr_parse_content_type.cnf UNSAT 276.26 943.864
+barman-pfile10-038.sas.ex.15.cnf UNSAT 21.35 27.389
+beempgsol2b1.cnf UNSAT 12.43 526.617
+bivium-40-200-0s0-0x92fc13b11169afbb2ef11a684d9fe9a19e743cd6aa5ce23fb5-19.cnf UNSAT 155.69
+bobsmdct_init_k88.cnf UNSAT 121.11 712.367
+Break_16_56.xml.cnf SAT 15.96
+Break_triple_12_30.xml.cnf SAT 0.51
+BubbleVsPancakeSort_6_6.cnf UNSAT 2.70 504.757
+bz-X-4-7-6.cnf SAT 43.83
+Carry_Bits_Fast_12.cnf.cnf SAT 0.14
+Carry_Bits_Fast_16.cnf.cnf SAT 2.45
+Carry_Bits_Fast_18.cnf.cnf SAT 0.10
+Carry_Bits_Fast_23.cnf.cnf SAT 0.62
+Carry_Bits_Fast_4.cnf.cnf SAT 0.11
+Carry_Bits_Fast_5.cnf.cnf SAT 15.16
+Carry_Bits_Fast_8.cnf.cnf SAT 1.75
+Carry_Save_Fast_1.cnf.cnf SAT 4.09
+Carry_Save_Fast_2.cnf.cnf SAT 7.17
+Carry_Save_Fast_3.cnf.cnf SAT 0.53
+cfi-rigid-d3-0180-02-orig.cnf UNSAT 287.58
+cfi-rigid-r2-0072-01-or_3.cnf SAT 3.75
+cfi-rigid-s2-0064-02-or_2.cnf UNSAT 73.96
+cfi-rigid-s2-0064-04-or_2.cnf UNSAT 292.06
+cfi-rigid-t2-0048-01-or_3.cnf SAT 1.16
+cfi-rigid-t2-0048-01-or_3_shuffle_all.cnf SAT 1.93
+cfi-rigid-t2-0048-02-or_3_shuffle_all.cnf SAT 4.03
+cfi-rigid-t2-0048-03-or_3_shuffle_all.cnf SAT 1.76
+cfi-rigid-z2-0088-01-or_2_shuffle_all.cnf UNSAT 66.43 893.684
+cfi-rigid-z2-0088-02-or_2_shuffle_all.cnf UNSAT 72.32 813.769
+cfi-rigid-z2-0088-03-or_2.cnf UNSAT 49.36 538.505
+cfi-rigid-z2-0088-03-or_2_shuffle_all.cnf UNSAT 76.47 954.190
+combined-crypto1-wff-seed-108-wffvars-500-cryptocplx-31-overlap-2.cnf SAT 1.48
+corePKCS11:C_CreateObject.cnf UNSAT 130.69 251.746
+ctl_4291_567_12_unsat.cnf UNSAT 34.78
+ctl_4291_567_1_unsat_pre.cnf UNSAT 121.42
+div-mitern167.cnf UNSAT 221.05
+div-mitern168.cnf UNSAT 101.48
+div-mitern171.cnf UNSAT 12.41
+div-mitern174.cnf UNSAT 2.99 627.836
+DLTM_twitter690_74_16.cnf SAT 43.38
+ecarev-110-4099-22-30-7.cnf SAT 93.55
+edit_distance041_183.cnf UNSAT 14.42 115.452
+Eternity-10-06_c18.cnf SAT 34.78
+ex175_20.cnf SAT 71.97
+frb75-13-2.used-as.sat04-878.cnf SAT 6.07
+g2-mizh-md5-48-2.cnf SAT 31.78
+gaussian.c.75.smt2-cvc4.cnf SAT 271.24
+grid-color-12-14-12-cb.cnf SAT 96.11
+grid-color-12-14-14-cb.cnf SAT 44.66
+grid-color-12-14-2-cb.cnf SAT 19.24
+grid-color-12-14-4-cb.cnf SAT 6.95
+grid-color-12-14-6-cb.cnf SAT 89.86
+grid-color-12-14-8-cb.cnf SAT 51.82
+grid-color-14-14-12-cb.cnf SAT 169.32
+grid-color-14-14-8-cb.cnf SAT 4.09
+grid-strips-grid-y-3.045-NOTKNOWN.cnf SAT 6.86
+gss-18-s100.cnf SAT 2.31
+hantzsche_wendt_unit_83.cnf UNSAT 57.59
+hantzsche_wendt_unit_92.cnf UNSAT 208.65
+hantzsche_wendt_unit_93.cnf SAT 9.98
+hwmcc15deep-6s516r-k18-sc2017.cnf UNSAT 281.99
+intel036_Iter109.cnf SAT 33.60
+intel046_Iter124.cnf SAT 5.67
+ITC2021_Late_1.xml.cnf SAT 0.94
+ITC2021_Late_6.xml.cnf SAT 0.25
+j3037_10_gmto_b.cnf SAT 4.79
+j3037_10_gmto_bm1.cnf UNSAT 6.01 497.765
+j3037_1_rggt_b.cnf SAT 8.06
+j3037_1_rggt_bm1.cnf UNSAT 131.96
+j3037_9_gmto_b.cnf SAT 210.50
+j3037_9_mdd_b.cnf SAT 41.92
+j3045_4_gmto_bm1.cnf UNSAT 171.76
+j3045_4_mdd_b.cnf SAT 14.58
+j3045_4_rggt_bm1.cnf UNSAT 76.09
+Kakuro-easy-112-ext.xml.hg_7.cnf SAT 42.08
+Kakuro-easy-117-ext.xml.hg_5.cnf SAT 105.63
+ktf_TF-3.tf_3_0.02_24.cnf UNSAT 20.37
+Lab-Project-FreeRTOS-Cellular-Library:Cellular_ATRemoveTrailingWhiteSpaces.cnf UNSAT 193.55 392.019
+LABS_n041_goal003.cnf SAT 110.21
+linked_list_swap_contents_safety_unwind40.cnf UNSAT 33.83 186.416
+linked_list_swap_contents_safety_unwind41.cnf UNSAT 19.94 188.318
+linked_list_swap_contents_safety_unwind43.cnf UNSAT 43.35 217.023
+linked_list_swap_contents_safety_unwind44.cnf UNSAT 102.41 223.103
+linked_list_swap_contents_safety_unwind48.cnf UNSAT 54.53 289.404
+linked_list_swap_contents_safety_unwind55.cnf UNSAT 90.29 303.242
+linked_list_swap_contents_safety_unwind56.cnf UNSAT 78.06 297.011
+linked_list_swap_contents_safety_unwind59.cnf UNSAT 150.22 395.327
+linked_list_swap_contents_safety_unwind66.cnf UNSAT 34.68 463.464
+linked_list_swap_contents_safety_unwind67.cnf UNSAT 60.33 505.559
+linked_list_swap_contents_safety_unwind71.cnf UNSAT 208.36 538.938
+linked_list_swap_contents_safety_unwind74.cnf UNSAT 86.01 529.014
+manol-pipe-f7nidw.cnf UNSAT 9.72 24.790
+manthey_single-ordered-initialized-w42-b8.cnf UNSAT 9.23 1066.685
+manthey_single-ordered-initialized-w50-b7.cnf UNSAT 46.79
+md4__zeroOut_19__freeIn_23__seed_2.cnf SAT 43.76
+mdp-28-10-sat.cnf SAT 19.28
+mdp-28-12-sat.cnf SAT 58.63
+mdp-28-16-sat.cnf SAT 20.14
+mod2c-rand3bip-sat-240-2.shuffled-as.sat05-2519.cnf SAT 48.15
+mp1-21.7.cnf SAT 3.71
+mp1-9_27.cnf SAT 6.10
+mp1-blockpuzzle_5x12_s6_free3.cnf UNSAT 22.48
+mp1-klieber2017s-0300-034-t12.cnf SAT 2.55
+mp1-squ_ali_s10x10_c39_abio_SAT.cnf SAT 4.64
+mp1-squ_ali_s10x10_c39_abix_SAT.cnf SAT 0.90
+mp1-squ_ali_s10x10_c39_bail_SAT.cnf SAT 0.96
+Nb8T61.cnf SAT 2.44
+ortholatin-7.cnf SAT 0.50
+PancakeVsInsertSort_6_7.cnf UNSAT 4.89 1368.455
+PancakeVsInsertSort_7_7.cnf UNSAT 57.57
+PancakeVsInsertSort_7_8.cnf UNSAT 135.73
+PancakeVsInsertSort_9_3.cnf UNSAT 30.40
+PancakeVsSelectionSort_7_6.cnf UNSAT 221.85
+PancakeVsSelectionSort_8_3.cnf UNSAT 26.45
+pj2002_k9.cnf UNSAT 240.50 1446.957
+pj2003_k9.cnf UNSAT 218.90 1349.078
+pj2015_k9.cnf UNSAT 261.87 1445.659
+pj2018_k10.cnf SAT 56.63
+ps_200_300_70.cnf UNSAT 19.02 30.316
+ps_200_323_70.cnf UNSAT 73.91 24.953
+puzzle30_sat.cnf SAT 23.24
+q_query_3_L200_coli.sat.cnf UNSAT 31.15 800.844
+reconf10_140_queen6_1.cnf SAT 111.97
+reconf10_145_queen6_2.cnf SAT 34.28
+reconf10_42_queen20_4_0961.cnf SAT 110.85
+reconf10_68_queen15_2.cnf SAT 9.33
+reconf10_86_sp003_1.cnf SAT 173.32
+reconf10_99_Ins_3_1.cnf SAT 12.81
+reconf20_116_le450_25c_1.cnf UNSAT 40.75 65.563
+reconf20_20_grid10_1_6141.cnf UNSAT 195.23
+reconf20_20_grid10_4_4957.cnf UNSAT 170.80
+reconf20_26_3-FullIns_4_1.cnf UNSAT 35.94 105.398
+reconf20_320_hc-square-2_1.cnf UNSAT 53.49 213.661
+reconf20_50_grid10_3_6844.cnf UNSAT 21.59 94.284
+reconf20_61_myciel4_2.cnf UNSAT 2.84 502.580
+rubikcube701-sc2017.cnf UNSAT 124.37
+s2n:s2n_stuffer_private_key_from_pem.cnf UNSAT 250.23
+satch2ways12u.cnf UNSAT 17.04 1363.921
+satcoin-genesis-SAT-4.cnf SAT 1.90
+satcoin-genesis-SAT-5.cnf SAT 1.90
+satcoin-genesis-SAT-8192.cnf SAT 9.38
+SAT_dat.k80.cnf UNSAT 22.37 64.573
+SAT_H_instances_childsnack_p06.hddl_2.cnf SAT 8.83
+SAT_H_instances_childsnack_p10.hddl_2.cnf SAT 19.71
+SAT_MS_sat_snake_p01.pddl_39.cnf SAT 297.98
+SC21_Timetable_C_527_E_71_Cl_35_S_35.cnf SAT 32.42
+SC21_Timetable_C_542_E_71_Cl_36_S_35.cnf SAT 32.67
+SC22_Timetable_C_451_E_50_Cl_30_S_28.cnf SAT 103.32
+SCPC-500-10.cnf UNSAT 4.17 628.753
+SCPC-500-11.cnf UNSAT 12.51
+SCPC-500-15.cnf UNSAT 5.02 777.724
+SCPC-500-16.cnf UNSAT 10.38
+SCPC-500-17.cnf UNSAT 11.38
+SCPC-500-18.cnf UNSAT 4.80 757.172
+SCPC-500-19.cnf UNSAT 2.83 420.075
+SCPC-500-20.cnf UNSAT 3.14 501.957
+SCPC-500-2.cnf UNSAT 4.93 774.404
+SCPC-500-4.cnf UNSAT 4.63 696.076
+SCPC-500-7.cnf UNSAT 5.43 897.638
+SCPC-500-8.cnf UNSAT 4.85 724.629
+SCPC-500-9.cnf UNSAT 4.17 632.742
+SE_PR_stb_588_138.apx_1.cnf SAT 91.29
+sin_depth_miter_4.cnf UNSAT 205.41
+sin-mitern28.cnf UNSAT 11.44 652.716
+sin-mitern29.cnf UNSAT 5.35 319.538
+size_5_5_5_i198_r12.cnf SAT 5.89
+soelberg_unit_109.cnf UNSAT 19.62 1223.861
+spg_420_280.cnf UNSAT 47.48 12.919
+sqrt_ineq_3.c.cnf SAT 3.90
+sqrt-mitern172.cnf UNSAT 5.43 1001.343
+sudoku-N30-22.cnf UNSAT 116.73 117.077
+sudoku-N30-24.cnf UNSAT 110.70 65.070
+sudoku-N30-27.cnf UNSAT 98.05 66.248
+sudoku-N30-6.cnf UNSAT 146.19 165.116
+summle_X111102_steps8_I1-2-2-4-4-8-25-100.cnf SAT 5.00
+summle_X111104_steps6_I1-2-2-4-4-8-25-100.cnf SAT 23.45
+summle_X111107_steps8_I1-2-2-4-4-8-25-100.cnf SAT 15.32
+summle_X111113_steps7_I1-2-2-4-4-8-25-100.cnf SAT 2.22
+summle_X111117_steps8_I1-2-2-4-4-8-25-100.cnf SAT 9.86
+summle_X111119_steps7_I1-2-2-4-4-8-25-100.cnf SAT 10.14
+summle_X111121_steps7_I1-2-2-4-4-8-25-100.cnf SAT 9.72
+summle_X11113_steps8_I1-2-2-4-4-8-25-100.cnf SAT 10.81
+summle_X8634_steps8_I1-2-2-4-4-8-25-100.cnf SAT 5.50
+summle_X8637_steps8_I1-2-2-4-4-8-25-100.cnf SAT 10.38
+summle_X8639_steps8_I1-2-2-4-4-8-25-100.cnf SAT 7.03
+summle_X8646_steps8_I1-2-2-4-4-8-25-100.cnf SAT 1.08
+summle_X8651_steps8_I1-2-2-4-4-8-25-100.cnf SAT 4.41
+sum_of_three_cubes_165_known_representation.cnf SAT 26.79
+sum_of_three_cubes_33_known_representation.cnf SAT 22.09
+sv-comp19_prop-reachsafety.triangular-longer_false-unreach-call.i-witness.cnf SAT 13.71
+traffic_f_unknown.cnf UNSAT 15.85 1315.123
+UNSAT_H_instances_childsnack_p12.hddl_1.cnf UNSAT 18.56 88.763
+UNSAT_MS_opt_snake_p20.pddl_29.cnf UNSAT 81.53 181.527
+urquhart3_25bis.shuffled.cnf UNSAT 15.40
+UTI-20-10p0-sc2009.cnf UNSAT 61.08 216.764
+velev-vliw-sat-4.0-b8.cnf SAT 28.91
+vlsat2_113_1150.cnf SAT 4.68
+vlsat2_24450_2770239.dimacs.cnf SAT 16.79
+vlsat2_57038_10572502.dimacs.cnf SAT 14.73
+Wallace_Bits_Fast_2.cnf.cnf SAT 0.16
+Wallace_Bits_Fast_3.cnf.cnf SAT 6.44
+Wallace_Bits_Fast_7.cnf.cnf SAT 0.29
+worker_500_500_500_0.35.cnf SAT 6.85
